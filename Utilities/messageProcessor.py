@@ -1,4 +1,5 @@
 from Utilities.model import Model
+
 class MessageProcessor:
     '''
     Class to process message and get prediction
@@ -21,8 +22,11 @@ You are an expert email security analyst specializing in phishing detection. You
 
     # Process Message
     def processMessage(self, message):
-        response = self.model.makeInference(message)
-        label = self.getLabelFromResponse(response)
+        '''
+        Inferences the LLM with passed message and returns predicted label (Safe or Phishing)
+        '''
+        response = self.model.makeInference(message) # Make the inference to LLM
+        label = self.getLabelFromResponse(response) # Process the response to get prediction
         return label
 
     
@@ -30,7 +34,7 @@ You are an expert email security analyst specializing in phishing detection. You
         '''
         Processes the model response to get predicted label
         '''
-        croppedResponse = response[-30: -1 ] # Response last 30 characters contain label
+        croppedResponse = response[-30: -1 ] # Response last 30 characters contain label as per output format
         if "phishing" in croppedResponse.lower():
             return "phishing"
         

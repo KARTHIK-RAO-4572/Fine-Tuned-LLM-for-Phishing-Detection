@@ -1,14 +1,18 @@
 class UIElements:
     '''
     Contains hard-coded HTML blocks, which will be displayed in the UI
+
     '''
 
+    # Title of the application
     title = """
     <div style=text-align:center;>
         <h1 style=font-family:verdana;>LLM Powered Phishing Detector</h1>
         Leverage the power of Fine-tuned Large Language Model to defend yourself against <br> AI powered phishing attacks!!
     </div>
     """
+
+    # Card when result is 'Phishing'
     phishingCard = """
     <p style="text-align:center>Prediction is Here!!<p>
     <div class="card" style="width:90%">
@@ -18,6 +22,8 @@ class UIElements:
         </div>
     </div>
     """ 
+
+    # Card when result is 'Safe'
     safeCard = """
     Prediction is Here!!
     <div class="card" style="width:90%">
@@ -28,6 +34,7 @@ class UIElements:
     </div>
     """
 
+    # Side bar that displays development team info
     developmentTeamInfo = """
     <div align="center">
         <h4 ><u>Development Team</u></h4>
