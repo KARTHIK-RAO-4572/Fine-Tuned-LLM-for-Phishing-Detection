@@ -31,9 +31,10 @@ with st.sidebar:
 # Text area
 st.session_state['message']  = st.text_area(label = "Text Area label",placeholder="Paste your message here",label_visibility="hidden")
 
-device = 'cpu' # Change to GPU when avauilable
+device = 'cpu' # Change to 'cuda' (GPU) when avauilable
 
-messageProcessor = MessageProcessor("Karthik-Rao-4572/Demo",device)
+messageProcessor = MessageProcessor("Karthik-Rao-4572/Mistral-95.6",device) # Use this when GPU is available
+# messageProcessor = MessageProcessor("Karthik-Rao-4572/Demo",device) # Use for demo purposes
 
 # Button to show result
 if st.button('Predict'):

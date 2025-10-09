@@ -2,6 +2,7 @@
 Contains logic for model related activities
 '''
 
+import torch
 import logging
 from transformers import AutoTokenizer, AutoModelForCausalLM, BitsAndBytesConfig, pipeline
 
